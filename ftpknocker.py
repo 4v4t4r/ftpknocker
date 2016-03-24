@@ -22,7 +22,9 @@ def try_ftp_login(hosts):
 			ftp = ftplib.FTP()
 			ftp.connect(host=host, timeout=args.timeout)
 			if '230' in ftp.login():
-				print(host)
+				#check for bots, if so download the bot, and upload it to VT
+				#folderName = 'yourFolderName'
+				#if folderName in ftp.nlst():
 				ftp.quit()
 		except ftplib.all_errors:
 			pass
